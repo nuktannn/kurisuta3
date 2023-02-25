@@ -1,0 +1,15 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+footer
+===============================*/
+footer{
+    background: #525252;
+    padding: 18px 0;
+    color:#fff;
+    text-align: center;
+}
+.copy-right{
+    font-size: 10px;
+}

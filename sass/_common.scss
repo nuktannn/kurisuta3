@@ -1,0 +1,81 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+common - 共通スタイル
+===============================*/
+
+@include mixin.mq(sp) {
+    .is-pc {
+      display: none;
+    }
+  }
+  @include mixin.mq(sp) {
+    .is-tab {
+      display: none;
+    }
+  }
+  
+  @include mixin.mq(pc) {
+    .is-sp {
+      display: none;
+    }
+  }
+
+/*================================
+base
+===============================*/
+body {
+  font-family: variable.$font-jp;
+  line-height: 1.5;
+  font-size: 1.4em;
+  letter-spacing: 0.05em;
+  color: variable.$base-color;
+}
+img {
+  width: 100%;
+}
+
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.inner {
+  width: mixin.$layout-width-inner;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 170px;
+
+  @include mixin.mq(tab) {
+    padding: 0 40px;
+  }
+
+  @include mixin.mq(sp) {
+    padding: 0 20px;
+  }
+}
+
+/*================================
+section
+===============================*/
+.section-link{
+  margin-top: 30px;
+  a{
+      display: inline-block;
+      background: variable.$base-color;
+      padding: 10px 40px;
+      width: 160px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      color:#fff;
+      font-size: 12px;
+      font-weight: bold;
+  }
+}
+.section-title{
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: (68 / 1000);
+}

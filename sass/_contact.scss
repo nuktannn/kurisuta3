@@ -1,0 +1,75 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+contact
+===============================*/
+.contact{
+    padding: 60px 0 120px;
+    background: #F2F2F2;
+
+    @include mixin.mq("sp") {
+        padding: 40px 0 40px;
+    }
+}
+.contat-wrapper{
+    display: flex;
+    align-items: center;
+
+    @include mixin.mq("tab") {
+        flex-direction: column-reverse;
+    }
+
+    @include mixin.mq("sp") {
+        flex-direction: column-reverse;
+    }
+}
+.contat-left{
+    margin-right: 80px;
+
+    @include mixin.mq("tab") {
+        margin-right: 0;
+    }
+
+    @include mixin.mq("sp") {
+        margin-right: 0;
+    }
+}
+.contact-message{
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 30px;
+
+    @include mixin.mq("sp") {
+      margin-top: 20px;
+    }
+}
+.contact-link{
+    margin-top: 30px;
+
+    @include mixin.mq("sp") {
+        margin-top: 50px;
+    } 
+}
+.contact-right{
+    img{
+        width: 580px;
+
+        @include mixin.mq("tab") {
+            width: 100%;
+        }
+
+        @include mixin.mq("sp") {
+            width: 100%;
+        }
+    }
+}
+.contact-title{
+
+    @include mixin.mq("tab") {
+        margin-top: 20px;
+     }
+    @include mixin.mq("sp") {
+       margin-top: 20px;
+    }
+}

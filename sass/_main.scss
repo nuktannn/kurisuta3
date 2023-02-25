@@ -1,0 +1,119 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+main
+===============================*/
+.main {
+  .pc-img {
+    display: block !important;
+    //画角計算は「高さ ÷ 幅 × 100」
+    padding-top: 58%;
+    background: url(../img/fw.png) top left / 75% no-repeat;
+
+    @include mixin.mq("tab") {
+      display: none !important;
+    }
+
+    @include mixin.mq("sp") {
+      display: none !important;
+    }
+  }
+  .tab-img {
+    @include mixin.mq("tab") {
+      display: block !important;
+      background: url(../img/kv-img.png) no-repeat;
+      background-size: cover;
+      width: 600px;
+      height: 890px;
+      object-fit: cover;
+    }
+
+    @include mixin.mq("sp") {
+      display: none !important;
+    }
+  }
+
+  .sp-img {
+    display: none !important;
+
+    @include mixin.mq("tab") {
+      display: none !important;
+    }
+
+    @include mixin.mq("sp") {
+      display: block !important;
+      background: url(../img/kv-img-sp.png) no-repeat;
+      width: 287px;
+      height: 580px;
+      object-fit: cover;
+    }
+  }
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 780px;
+    height: 100vh;
+    background: variable.$base-color;
+    z-index: -5;
+
+    @include mixin.mq("tab") {
+      width: 562px;
+      height: 1024px;
+      right: 0%;
+    }
+
+    @include mixin.mq("sp") {
+      width: 283px;
+      height: 667px;
+      right: 0%;
+    }
+  }
+}
+.main-wrapper {
+  position: absolute;
+  top: 155px;
+  right: 15%;
+  color: #fff;
+
+  @include mixin.mq("tab") {
+    top: 250px;
+    right: 8%;
+  }
+
+  @include mixin.mq("sp") {
+    top: 175px;
+    right: 8%;
+  }
+}
+.main-title {
+  font-size: 20px;
+
+  @include mixin.mq("sp") {
+    font-size: 12px;
+  }
+}
+.main-text {
+  font-size: 20px;
+
+  @include mixin.mq("sp") {
+    font-size: 12px;
+  }
+}
+.main-sub-title {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: (86 / 72);
+  letter-spacing: (50 / 1000);
+
+  @include mixin.mq("sp") {
+    font-size: 56px;
+    line-height: (53 / 56);
+    margin-top: 20px;
+  }
+}
